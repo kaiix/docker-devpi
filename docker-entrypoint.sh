@@ -30,7 +30,7 @@ if [ "$1" = 'devpi' ]; then
     fi
 
     echo "[RUN]: Launching devpi-server"
-    exec devpi-server --restrict-modify root --host 0.0.0.0 --port 3141
+    exec devpi-server --restrict-modify root --host 0.0.0.0 --port 3141 --mirror-cache-expiry ${DEVPI_EXPIRE:-1800}
 fi
 
 echo "[RUN]: Builtin command not provided [devpi]"
